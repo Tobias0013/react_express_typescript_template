@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "remove": "rm -r ./node_modules && rm -r ./package-lock.json",
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production",
+    "build-client": "webpack --mode production",
     "server": "nodemon server/server.ts",
-    "server-build": "npx tsc"
+    "build-server": "npx tsc",
+    "build": "webpack --mode production && npx tsc",
+    "start-build": "start http://localhost:3000 && node dist-server/server.js",
+    "remove": "rm -r ./node_modules"
   },
   "keywords": [],
   "author": "",

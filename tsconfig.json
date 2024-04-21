@@ -4,8 +4,9 @@
       "allowJs": true,
       "jsx": "react",
       "moduleResolution": "node",
-      "outDir": "./dist/server",
+      "outDir": "./dist-server",
       "strict": true,
       "esModuleInterop": true
     },
+    "include": ["server/server.ts"]
   }
