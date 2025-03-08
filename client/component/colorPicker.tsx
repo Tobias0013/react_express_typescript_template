@@ -1,6 +1,18 @@
 import React from "react";
 import { useState } from "react";
 
+/**
+ * A React functional component that allows users to pick a color.
+ * 
+ * This component displays a heading that changes color when a button is clicked.
+ * 
+ * @returns {React.ReactNode} The rendered component.
+ * 
+ * @example
+ * // Usage example:
+ * // <ColorPicker />
+ * 
+ */
 export default function ColorPicker() {
   const [color, setColor] = useState("");
 

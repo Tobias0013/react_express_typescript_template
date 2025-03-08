@@ -1,6 +1,19 @@
 import React from "react";
 import { useState } from "react";
 
+/**
+ * A React functional component that renders a form.
+ *
+ * This component renders a form that takes a user's name as input.
+ * When the form is submitted, an alert is shown with a greeting message.
+ *
+ * @returns {React.ReactNode} The rendered component.
+ *
+ * @example
+ * // Usage example:
+ * // <Form />
+ *
+ */
 export default function Form() {
   const [name, setName] = useState("");
 
