@@ -7,12 +7,10 @@
     "start": "concurrently 'npm run server' 'npm run client'",
     "server": "nodemon server/server.ts",
     "client": "webpack-dev-server --mode development --open",
-    
     "build": "npm run build:client && npm run build:server",
     "build:client": "webpack --mode production",
     "build:server": "npx tsc",
     "start:build": "open http://localhost:3000 && node dist-server/server.js",
-
     "doc": "npm run doc:typedoc && npm run doc:client && npm run doc:server",
     "doc:typedoc": "typedoc",
     "doc:client": "mkdir -p ./docs/graphs-client && npm run doc:madge:client && npm run doc:dc:client && npm run doc:dc:external:client",
@@ -23,11 +21,10 @@
     "doc:dc:server": "npx depcruise server --include-only '^server' --output-type dot | dot -T svg > docs/graphs-server/dc-graph-server.svg",
     "doc:dc:external:client": "npx depcruise client --output-type dot | dot -T svg > docs/graphs-client/dc-ext-graph-client.svg",
     "doc:dc:external:server": "npx depcruise server --output-type dot | dot -T svg > docs/graphs-server/dc-ext-graph-server.svg",
-    
     "clean": "npm run clean:modules && npm run clean:doc && npm run clean:dist",
     "clean:modules": "rm -r -f ./node_modules",
-    "clean:dist":"rm -r -f ./dist && rm -r -f ./dist-server",
-    "clean:doc":"rm -r -f ./docs"
+    "clean:dist": "rm -r -f ./dist && rm -r -f ./dist-server",
+    "clean:doc": "rm -r -f ./docs"
   },
   "keywords": [],
   "author": "",
@@ -44,10 +41,13 @@
     "@types/react-dom": "^19.0.3",
     "babel-loader": "^10.0.0",
     "concurrently": "^9.1.2",
+    "css-loader": "^7.1.2",
     "dependency-cruiser": "^16.10.0",
+    "dotenv-webpack": "^8.1.0",
     "html-webpack-plugin": "^5.6.3",
     "madge": "^8.0.0",
     "nodemon": "^3.1.9",
+    "style-loader": "^4.0.0",
     "ts-node": "^10.9.2",
     "typedoc": "^0.27.9",
     "typescript": "^5.7.3",
@@ -58,13 +58,11 @@
   "dependencies": {
     "axios": "^1.8.2",
     "cors": "^2.8.5",
-    "css-loader": "^7.1.2",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5",
-    "style-loader": "^4.0.0"
+    "react-router-dom": "^7.1.5"
   }
 }

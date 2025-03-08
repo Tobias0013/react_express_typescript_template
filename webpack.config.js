@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin") ;
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: "./client",
@@ -11,6 +12,13 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /.css$/,
+        use: [
+            'style-loader',
+            'css-loader'
+        ]
+      }
     ],
   },
   plugins: [
@@ -18,6 +26,7 @@ module.exports = {
       template: "./client/index.html",
       filename: "./index.html",
     }),
+    new Dotenv()
   ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js']

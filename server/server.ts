@@ -29,6 +29,6 @@ app.use("/", router);
 
 app.listen(port(), () => {
   console.log(
-    `Server started successfully.\nListening on http://localhost:${port}`
+    `Server started successfully.\nListening on http://localhost:${port()}`
   );
 });
