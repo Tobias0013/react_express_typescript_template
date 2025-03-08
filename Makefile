@@ -56,17 +56,21 @@ start-build:
 	@start http://localhost:$(PORT) && node dist-server/server.js
 
 # Clean project or parts of project.
-clean:
-	@echo Clean up build folders
-	@rm -r dist
-	@rm -r dist-server
-
 clean-node:
 	@echo Clean up node_modules
-	@rm -r node_modules
+	@rm -r -f node_modules
 
-clean-all:
-	@npx concurrently "make clean-build" "make clean-node"
+clean-docs:
+	@echo Clean up docs
+	@rm -r -f docs
+
+clean-build:
+	@echo Clean up build folders
+	@rm -r -f dist
+	@rm -r -f dist-server
+
+clean:
+	@make clean-build && make clean-node && make clean-docs
 
 # Generate automated documentation.
 doc: 
